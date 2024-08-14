@@ -1,0 +1,90 @@
+.outer-body{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	font-family: "Edu VIC WA NT Beginner", cursive;
+	font-optical-sizing: auto;
+	font-weight: 700;
+	flex: 1 auto;
+}
+.quiz-title{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 2%;
+}
+.create-quiz{
+	width: 45%;
+	height: 70%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: white;
+	padding: 2% 5%;
+	border-radius: 10px;
+	margin: 0% 2%;
+}
+.quiz-elements{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.quiz-elements input{
+	margin: 2% 0%;
+}
+.quiz-buttons{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 50%;
+	height: 60%;
+	padding: 10%;
+}
+.quiz-buttons input{
+	font-family: "Matemasie", sans-serif;
+	font-weight: 400;
+	width: 40%;
+	height: 20%;
+	padding: 2%;
+	border: 0;
+	transition: 0.35s;
+}
+.quiz-buttons input:hover{
+	background: olive;
+	color: white;
+	cursor: pointer;
+	border-radius: 10px;
+}
+.landing-buttons{
+	padding: 0%;
+	width: 30%;
+	background: white;
+	border-radius: 10px;
+}
+.quiz-body{
+	border-radius: 10px;
+	background: white;
+	padding: 3%;
+	margin: 5%;
+	width: 50%;
+}
+.test-buttons input{
+	margin: 4% 0%;
+	width: 70%;
+	height: 40px;
+}
+input{
+	transition: 0.2s;
+	border-radius: 5px;
+}
+input:hover{
+	box-shadow: 3px 3px 3px grey;
+}
+body{
+	display: flex;
+	height: 97.5vh;
+	justify-content: center;
+	background: linear-gradient(0deg, rgba(18,250,1,1) 0%, rgba(18,142,235,1) 100%);
+}

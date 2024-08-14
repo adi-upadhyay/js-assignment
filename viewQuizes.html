@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="./Stylesheets/CreateQuiz.css" rel="stylesheet" type="text/css">
+    <title>Take Quiz</title>
+  </head>
+  <body>
+	<div class="outer-body">
+		<div class="quiz-body">
+			<div class="quiz-title">
+				<label>Available Quizes</label>
+			</div>
+			<div id="quiz-body">
+			</div>
+		</div>
+	</div>
+	<script>
+		var allQuizes = [];
+		var temp = JSON.parse(window.localStorage.getItem("Quiz"));
+		for (const iterator in temp){
+			var newDiv = document.createElement("div");
+			newDiv.setAttribute("id", iterator);
+			newDiv.setAttribute("class", "test-buttons");
+			newDiv.innerHTML = `
+			<input type="button" value=${iterator}>`;
+			document.getElementById("quiz-body").appendChild(newDiv);
+		}
+	</script>
+  </body>
+</html>
