@@ -17,6 +17,10 @@
 		</div>
 	</div>
 	<script>
+		function takeQuiz(it){
+			window.sessionStorage.setItem("currquiz", it.id);
+			window.location.replace("takeQuiz.html");
+		}
 		var allQuizes = [];
 		var temp = JSON.parse(window.localStorage.getItem("Quiz"));
 		for (const iterator in temp){
@@ -24,7 +28,7 @@
 			newDiv.setAttribute("id", iterator);
 			newDiv.setAttribute("class", "test-buttons");
 			newDiv.innerHTML = `
-			<input type="button" value=${iterator}>`;
+			<input type="button" value=${iterator} onclick="takeQuiz(${iterator})">`;
 			document.getElementById("quiz-body").appendChild(newDiv);
 		}
 	</script>

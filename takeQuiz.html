@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="./Stylesheets/CreateQuiz.css" rel="stylesheet" type="text/css">
+	<script src="./Scripts/mainScript.js"></script>
+    <title>Take Quiz</title>
+  </head>
+  <body>
+	<div class="outer-body">
+		<div class="quiz-body">
+			
+		</div>
+	</div>
+	<script>
+		var allQuizes = [];
+		var temp = JSON.parse(window.localStorage.getItem("Quiz"));
+		var currQuiz = window.sessionStorage.getItem("currquiz");
+		for (const iterator in temp.currQuiz){
+			console.log(iterator);
+		}
+	</script>
+  </body>
+</html>
