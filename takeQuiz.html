@@ -26,14 +26,12 @@
 			newDiv.innerHTML = `
 			<label class="question">${iterator}</label>`;
 			document.getElementById("quiz-body").appendChild(newDiv);
-			console.log(JSON.parse(window.localStorage.getItem("Quiz")[currQuiz])[iterator]);
-			for (const options in [1,2]){
-				console.log(options);
+			var options = ((temp[currQuiz])[iterator]);
+			for (var itr = 0 ; itr < 8 ; itr+=2){
 				var newButtons = document.createElement("div");
-				newDiv.setAttribute("id", iterator);
-				newDiv.innerHTML = `
-				<label class="question">${iterator}</label>`;
-				document.getElementById("${iterator}").appendChild(newButtons);
+				newButtons.setAttribute("id", options[itr]);
+				newButtons.innerHTML = `<input type="radio" value="${options[itr]}"> <label>"${options[itr]}"</label>`;
+				document.getElementById(iterator).appendChild(newButtons);
 			}
 		}
 	</script>
