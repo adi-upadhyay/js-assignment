@@ -9,11 +9,35 @@
   </head>
   <body>
 	<div class="outer-body">
-		<div class="quiz-body" id="quiz-body">
-			
+		<div class="quiz-body" style="margin-top: 15%;">
+			<form>
+			<div id="quiz-body">
+			</div>
+			<div class="quiz-buttons" style="flex-direction: row;">
+				<input type="button" value="submit" onclick="submitAnswers()">
+				<input type="reset" value="reset">
+			</div>
+			</form>
 		</div>
 	</div>
 	<script>
+		function submitAnswers(){
+			const formValues = new FormData(document.querySelector("form"));
+			var totalMarks = 0;
+			for (const i of formValues){
+				const currQuesAns = (temp[currQuiz][i[0]]).split(",");
+				if (currQuesAns[4] == i[1]){
+					totalMarks += 1;
+				}
+			}
+			if (totalMarks != 1){
+				window.alert(`You scored ${totalMarks} marks!!`);
+			}
+			else{
+				window.alert(`You scored ${totalMarks} mark!!`);
+			}
+			window.location.replace("viewQuizes.html");
+		}
 		var allQuizes = [];
 		var temp = JSON.parse(window.localStorage.getItem("Quiz"));
 		var currQuiz = window.sessionStorage.getItem("currquiz");
@@ -26,11 +50,10 @@
 			newDiv.innerHTML = `
 			<label class="question">${iterator}</label>`;
 			document.getElementById("quiz-body").appendChild(newDiv);
-			var options = ((temp[currQuiz])[iterator]);
-			for (var itr = 0 ; itr < 8 ; itr+=2){
+			var options = ((temp[currQuiz])[iterator]).split(",");
+			for (var itr = 0 ; itr < 4 ; itr+=1){
 				var newButtons = document.createElement("div");
-				newButtons.setAttribute("id", options[itr]);
-				newButtons.innerHTML = `<input type="radio" value="${options[itr]}"> <label>"${options[itr]}"</label>`;
+				newButtons.innerHTML = `<input type="radio" value="${itr+1}" name="${iterator}"> <label>"${options[itr]}"</label>`;
 				document.getElementById(iterator).appendChild(newButtons);
 			}
 		}

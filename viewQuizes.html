@@ -13,18 +13,15 @@
                 <label>Available Quizzes</label>
             </div>
             <div id="quiz-body-2">
-                <!-- Quiz buttons will be dynamically added here -->
             </div>
         </div>
     </div>
     <script>
-        // Function to handle the quiz button click
         function takeQuiz(quizId) {
             window.sessionStorage.setItem("currquiz", quizId);
             window.location.replace("takeQuiz.html");
         }
 
-        // Fetch quizzes from localStorage and create buttons
         document.addEventListener('DOMContentLoaded', (event) => {
             var temp = JSON.parse(window.localStorage.getItem("Quiz")) || {};
             for (const quizId in temp) {
@@ -33,7 +30,6 @@
                     newDiv.setAttribute("id", quizId);
                     newDiv.setAttribute("class", "test-buttons");
 
-                    // Create a button and append it to the new div
                     var button = document.createElement("input");
                     button.type = "button";
                     button.value = quizId;

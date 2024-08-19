@@ -52,7 +52,7 @@
 	transition: 0.35s;
 }
 .quiz-buttons input:hover{
-	background: olive;
+	background: #2da7ba;
 	color: white;
 	cursor: pointer;
 	border-radius: 10px;

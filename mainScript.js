@@ -98,6 +98,7 @@ function saveQuiz(){
 			console.log("assd", finalObj);
 		}
 		window.localStorage.setItem("Quiz", JSON.stringify(finalObj));
+		window.location.replace("viewQuizes.html")
 	}
 }
 function newSession(){
